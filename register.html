@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register — FreelanceHub</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/auth.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body class="auth-body">
+    <!-- ===== NAVBAR MINIMAL ===== -->
+    <nav class="auth-navbar">
+      <div class="container">
+        <div class="auth-nav-inner">
+          <a href="index.html" class="nav-logo">
+            <img
+              src="assets/images/logo.svg"
+              alt="FreelanceHub"
+              height="38"
+              style="display: block"
+            />
+          </a>
+          <div class="auth-nav-links">
+            <span>Already have an account?</span>
+            <a href="login.html" class="btn btn-outline btn-sm"> Sign In </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ===== AUTH LAYOUT ===== -->
+    <div class="auth-layout">
+      <!-- ===== LEFT PANEL ===== -->
+      <div class="auth-left">
+        <div class="auth-left-inner">
+          <div class="auth-left-content">
+            <div class="auth-brand-logo">
+              <div class="logo-icon-lg">⚡</div>
+              <span>FreelanceHub</span>
+            </div>
+
+            <h2 class="auth-left-title">
+              Start Your Journey <br />
+              <span class="gradient-text-auth">Join for Free Today</span>
+            </h2>
+
+            <p class="auth-left-subtitle">
+              Whether you're looking to hire top talent or offer your skills,
+              FreelanceHub is the place to be.
+            </p>
+
+            <!-- Stats -->
+            <div class="auth-stats-grid">
+              <div class="auth-stat">
+                <strong>5,000+</strong>
+                <span>Freelancers</span>
+              </div>
+              <div class="auth-stat">
+                <strong>12,000+</strong>
+                <span>Services</span>
+              </div>
+              <div class="auth-stat">
+                <strong>50,000+</strong>
+                <span>Happy Clients</span>
+              </div>
+              <div class="auth-stat">
+                <strong>98%</strong>
+                <span>Satisfaction</span>
+              </div>
+            </div>
+
+            <!-- Benefits -->
+            <ul class="auth-features">
+              <li>
+                <div class="af-icon">
+                  <i class="fa fa-briefcase"></i>
+                </div>
+                <div>
+                  <strong>Post Your Services</strong>
+                  <span>Showcase your skills to thousands of clients</span>
+                </div>
+              </li>
+              <li>
+                <div class="af-icon">
+                  <i class="fa fa-dollar-sign"></i>
+                </div>
+                <div>
+                  <strong>Earn More</strong>
+                  <span>Set your own rates and grow your income</span>
+                </div>
+              </li>
+              <li>
+                <div class="af-icon">
+                  <i class="fa fa-globe"></i>
+                </div>
+                <div>
+                  <strong>Work Globally</strong>
+                  <span>Connect with clients from 150+ countries</span>
+                </div>
+              </li>
+              <li>
+                <div class="af-icon">
+                  <i class="fa fa-chart-line"></i>
+                </div>
+                <div>
+                  <strong>Grow Your Brand</strong>
+                  <span>Build your reputation with verified reviews</span>
+                </div>
+              </li>
+            </ul>
+
+            <!-- Avatars -->
+            <div class="auth-community">
+              <div class="community-avatars">
+                <img src="https://i.pravatar.cc/36?img=3" alt="" />
+                <img src="https://i.pravatar.cc/36?img=5" alt="" />
+                <img src="https://i.pravatar.cc/36?img=12" alt="" />
+                <img src="https://i.pravatar.cc/36?img=20" alt="" />
+                <img src="https://i.pravatar.cc/36?img=25" alt="" />
+                <div class="community-more">+50k</div>
+              </div>
+              <p>Join our growing community!</p>
+            </div>
+          </div>
+
+          <!-- Floating Cards -->
+          <div class="auth-floating-cards">
+            <div class="afc-card afc-1">
+              <div class="afc-icon">🚀</div>
+              <div>
+                <strong>Free to Join</strong>
+                <span>No hidden fees</span>
+              </div>
+            </div>
+            <div class="afc-card afc-2">
+              <div class="afc-icon">💼</div>
+              <div>
+                <strong>New Project!</strong>
+                <span>$2,400 Budget</span>
+              </div>
+            </div>
+            <div class="afc-card afc-3">
+              <img src="https://i.pravatar.cc/36?img=5" alt="" />
+              <div>
+                <strong>Sarah K.</strong>
+                <span>Just joined ✨</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== RIGHT PANEL — REGISTER FORM ===== -->
+      <div class="auth-right">
+        <div class="auth-form-wrap">
+          <!-- Form Header -->
+          <div class="auth-form-header">
+            <h1>Create Your Account 🚀</h1>
+            <p>Join thousands of freelancers and clients today</p>
+          </div>
+
+          <!-- Account Type Toggle -->
+          <div class="account-type-toggle">
+            <button
+              class="type-btn active"
+              id="clientTypeBtn"
+              onclick="selectAccountType('client')"
+            >
+              <i class="fa fa-user"></i>
+              <span>I'm a Client</span>
+              <small>Looking to hire</small>
+            </button>
+            <button
+              class="type-btn"
+              id="freelancerTypeBtn"
+              onclick="selectAccountType('freelancer')"
+            >
+              <i class="fa fa-laptop-code"></i>
+              <span>I'm a Freelancer</span>
+              <small>Looking for work</small>
+            </button>
+          </div>
+
+          <!-- Social Login -->
+          <div class="social-login">
+            <button
+              class="social-login-btn google"
+              onclick="socialLogin('Google')"
+            >
+              <img
+                src="https://www.svgrepo.com/show/475656/google-color.svg"
+                alt="Google"
+                width="20"
+              />
+              Continue with Google
+            </button>
+            <button
+              class="social-login-btn github"
+              onclick="socialLogin('GitHub')"
+            >
+              <i class="fab fa-github"></i>
+              Continue with GitHub
+            </button>
+          </div>
+
+          <!-- Divider -->
+          <div class="auth-divider">
+            <span>or register with email</span>
+          </div>
+
+          <!-- Register Form -->
+          <form
+            class="auth-form"
+            id="registerForm"
+            onsubmit="handleRegister(event)"
+            novalidate
+          >
+            <!-- Name Row -->
+            <div class="form-row">
+              <div class="form-field" id="firstNameField">
+                <label for="firstName">First Name</label>
+                <div class="input-wrap">
+                  <i class="fa fa-user input-icon"></i>
+                  <input
+                    type="text"
+                    id="firstName"
+                    placeholder="First name"
+                    autocomplete="given-name"
+                  />
+                  <span class="input-status"></span>
+                </div>
+                <span class="field-error" id="firstNameError"></span>
+              </div>
+
+              <div class="form-field" id="lastNameField">
+                <label for="lastName">Last Name</label>
+                <div class="input-wrap">
+                  <i class="fa fa-user input-icon"></i>
+                  <input
+                    type="text"
+                    id="lastName"
+                    placeholder="Last name"
+                    autocomplete="family-name"
+                  />
+                  <span class="input-status"></span>
+                </div>
+                <span class="field-error" id="lastNameError"></span>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="form-field" id="regEmailField">
+              <label for="regEmail">Email Address</label>
+              <div class="input-wrap">
+                <i class="fa fa-envelope input-icon"></i>
+                <input
+                  type="email"
+                  id="regEmail"
+                  placeholder="Enter your email"
+                  autocomplete="email"
+                />
+                <span class="input-status"></span>
+              </div>
+              <span class="field-error" id="regEmailError"></span>
+            </div>
+
+            <!-- Username -->
+            <div class="form-field" id="usernameField">
+              <label for="username">Username</label>
+              <div class="input-wrap">
+                <i class="fa fa-at input-icon"></i>
+                <input
+                  type="text"
+                  id="username"
+                  placeholder="Choose a username"
+                  autocomplete="username"
+                />
+                <span class="input-status"></span>
+              </div>
+              <span class="field-error" id="usernameError"></span>
+            </div>
+
+            <!-- Password -->
+            <div class="form-field" id="regPasswordField">
+              <label for="regPassword">Password</label>
+              <div class="input-wrap">
+                <i class="fa fa-lock input-icon"></i>
+                <input
+                  type="password"
+                  id="regPassword"
+                  placeholder="Create a strong password"
+                  autocomplete="new-password"
+                />
+                <button
+                  type="button"
+                  class="toggle-password"
+                  onclick="togglePassword('regPassword', this)"
+                >
+                  <i class="fa fa-eye"></i>
+                </button>
+              </div>
+              <span class="field-error" id="regPasswordError"></span>
+
+              <!-- Password Strength -->
+              <div class="password-strength" id="passwordStrength">
+                <div class="strength-bars">
+                  <div class="strength-bar" id="sb1"></div>
+                  <div class="strength-bar" id="sb2"></div>
+                  <div class="strength-bar" id="sb3"></div>
+                  <div class="strength-bar" id="sb4"></div>
+                </div>
+                <span class="strength-label" id="strengthLabel"
+                  >Enter password</span
+                >
+              </div>
+
+              <!-- Password Requirements -->
+              <div class="password-reqs" id="passwordReqs">
+                <div class="req-item" id="req-length">
+                  <i class="fa fa-circle-xmark"></i> At least 8 characters
+                </div>
+                <div class="req-item" id="req-upper">
+                  <i class="fa fa-circle-xmark"></i> One uppercase letter
+                </div>
+                <div class="req-item" id="req-number">
+                  <i class="fa fa-circle-xmark"></i> One number
+                </div>
+                <div class="req-item" id="req-special">
+                  <i class="fa fa-circle-xmark"></i> One special character
+                </div>
+              </div>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="form-field" id="confirmPasswordField">
+              <label for="confirmPassword">Confirm Password</label>
+              <div class="input-wrap">
+                <i class="fa fa-lock input-icon"></i>
+                <input
+                  type="password"
+                  id="confirmPassword"
+                  placeholder="Confirm your password"
+                  autocomplete="new-password"
+                />
+                <button
+                  type="button"
+                  class="toggle-password"
+                  onclick="togglePassword('confirmPassword', this)"
+                >
+                  <i class="fa fa-eye"></i>
+                </button>
+              </div>
+              <span class="field-error" id="confirmPasswordError"></span>
+            </div>
+
+            <!-- Freelancer Extra Fields -->
+            <div id="freelancerFields" style="display: none">
+              <div class="form-field">
+                <label for="profession">Your Profession</label>
+                <div class="input-wrap">
+                  <i class="fa fa-briefcase input-icon"></i>
+                  <select id="profession" class="input-select">
+                    <option value="">Select your main skill</option>
+                    <option>Web Developer</option>
+                    <option>Mobile Developer</option>
+                    <option>UI/UX Designer</option>
+                    <option>Graphic Designer</option>
+                    <option>Digital Marketer</option>
+                    <option>Content Writer</option>
+                    <option>Video Editor</option>
+                    <option>Data Scientist</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Terms & Conditions -->
+            <div class="form-field">
+              <label class="checkbox-wrap" id="termsField">
+                <input type="checkbox" id="agreeTerms" />
+                <span class="checkbox-custom"></span>
+                <span>
+                  I agree to the
+                  <a href="#" onclick="return false;">Terms of Service</a>
+                  and
+                  <a href="#" onclick="return false;">Privacy Policy</a>
+                </span>
+              </label>
+              <span class="field-error" id="termsError"></span>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="auth-submit-btn" id="registerBtn">
+              <span class="btn-text">
+                Create Account <i class="fa fa-arrow-right"></i>
+              </span>
+              <span class="btn-loader" style="display: none">
+                <i class="fa fa-spinner fa-spin"></i> Creating account...
+              </span>
+            </button>
+          </form>
+
+          <!-- Footer -->
+          <div class="auth-form-footer">
+            <p>
+              Already have an account?
+              <a href="login.html">Sign in here</a>
+            </p>
+          </div>
+
+          <!-- Trust -->
+          <div class="auth-trust">
+            <div class="trust-row">
+              <span><i class="fa fa-lock"></i> SSL Secured</span>
+              <span><i class="fa fa-shield-halved"></i> Privacy Protected</span>
+              <span><i class="fa fa-gift"></i> Free Forever</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+  </body>
+</html>
