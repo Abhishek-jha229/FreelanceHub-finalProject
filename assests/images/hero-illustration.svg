@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" width="600" height="500">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#ef4444;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:1"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="rgba(0,0,0,0.15)"/>
+    </filter>
+  </defs>
+
+  <!-- Background Circle -->
+  <circle cx="300" cy="250" r="220" fill="rgba(99,102,241,0.06)"/>
+  <circle cx="300" cy="250" r="160" fill="rgba(99,102,241,0.06)"/>
+
+  <!-- Main Card — Laptop / Dashboard -->
+  <g filter="url(#shadow)">
+    <rect x="100" y="100" width="400" height="260"
+      rx="20" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+
+    <!-- Card Header Bar -->
+    <rect x="100" y="100" width="400" height="44" rx="20" fill="#f9fafb"/>
+    <rect x="100" y="124" width="400" height="20" fill="#f9fafb"/>
+
+    <!-- Window Dots -->
+    <circle cx="130" cy="122" r="6" fill="#ef4444"/>
+    <circle cx="150" cy="122" r="6" fill="#f59e0b"/>
+    <circle cx="170" cy="122" r="6" fill="#10b981"/>
+
+    <!-- URL Bar -->
+    <rect x="190" y="113" width="250" height="18" rx="9" fill="#e5e7eb"/>
+    <text x="315" y="125" text-anchor="middle"
+      font-family="Inter, Arial" font-size="9" fill="#9ca3af">
+      freelancehub.com
+    </text>
+
+    <!-- Dashboard Content -->
+    <!-- Sidebar -->
+    <rect x="100" y="144" width="80" height="216" fill="#f9fafb"/>
+
+    <!-- Sidebar Icons -->
+    <rect x="115" y="162" width="50" height="8" rx="4" fill="#e5e7eb"/>
+    <rect x="115" y="182" width="50" height="8" rx="4" fill="#6366f1"/>
+    <rect x="115" y="202" width="50" height="8" rx="4" fill="#e5e7eb"/>
+    <rect x="115" y="222" width="50" height="8" rx="4" fill="#e5e7eb"/>
+    <rect x="115" y="242" width="50" height="8" rx="4" fill="#e5e7eb"/>
+
+    <!-- Main Content Area -->
+    <!-- Stat Cards Row -->
+    <rect x="196" y="155" width="88" height="56" rx="10" fill="white"
+      stroke="#e5e7eb" stroke-width="1"/>
+    <rect x="196" y="160" width="40" height="6" rx="3" fill="#e5e7eb"/>
+    <text x="200" y="196" font-family="Inter" font-size="16"
+      font-weight="800" fill="#6366f1">$4.2k</text>
+
+    <rect x="296" y="155" width="88" height="56" rx="10" fill="white"
+      stroke="#e5e7eb" stroke-width="1"/>
+    <rect x="296" y="160" width="40" height="6" rx="3" fill="#e5e7eb"/>
+    <text x="300" y="196" font-family="Inter" font-size="16"
+      font-weight="800" fill="#10b981">98%</text>
+
+    <rect x="396" y="155" width="88" height="56" rx="10" fill="white"
+      stroke="#e5e7eb" stroke-width="1"/>
+    <rect x="396" y="160" width="40" height="6" rx="3" fill="#e5e7eb"/>
+    <text x="400" y="196" font-family="Inter" font-size="16"
+      font-weight="800" fill="#f59e0b">312</text>
+
+    <!-- Chart Area -->
+    <rect x="196" y="224" width="120" height="80" rx="10" fill="white"
+      stroke="#e5e7eb" stroke-width="1"/>
+    <!-- Chart Bars -->
+    <rect x="208" y="270" width="14" height="24" rx="3" fill="#e0e7ff"/>
+    <rect x="226" y="255" width="14" height="39" rx="3" fill="#6366f1"/>
+    <rect x="244" y="262" width="14" height="32" rx="3" fill="#e0e7ff"/>
+    <rect x="262" y="248" width="14" height="46" rx="3" fill="#8b5cf6"/>
+    <rect x="280" y="258" width="14" height="36" rx="3" fill="#e0e7ff"/>
+
+    <!-- Orders List -->
+    <rect x="328" y="224" width="156" height="80" rx="10" fill="white"
+      stroke="#e5e7eb" stroke-width="1"/>
+    <rect x="338" y="236" width="60" height="6" rx="3" fill="#1f2937"/>
+    <!-- Order Items -->
+    <circle cx="344" cy="258" r="8" fill="#e0e7ff"/>
+    <rect x="356" y="253" width="60" height="5" rx="2" fill="#e5e7eb"/>
+    <rect x="356" y="262" width="40" height="4" rx="2" fill="#f3f4f6"/>
+    <rect x="454" y="252" width="24" height="14" rx="4" fill="#d1fae5"/>
+
+    <circle cx="344" cy="284" r="8" fill="#fef3c7"/>
+    <rect x="356" y="279" width="55" height="5" rx="2" fill="#e5e7eb"/>
+    <rect x="356" y="288" width="35" height="4" rx="2" fill="#f3f4f6"/>
+    <rect x="454" y="278" width="24" height="14" rx="4" fill="#fef3c7"/>
+  </g>
+
+  <!-- Floating Card 1 — Profile -->
+  <g transform="translate(30, 140)" filter="url(#shadow)">
+    <rect width="150" height="56" rx="14" fill="white"/>
+    <circle cx="28" cy="28" r="18" fill="url(#grad1)"/>
+    <text x="28" y="33" text-anchor="middle"
+      font-size="16" fill="white">👨‍💻</text>
+    <text x="54" y="22" font-family="Inter" font-size="11"
+      font-weight="700" fill="#1f2937">Alex Johnson</text>
+    <text x="54" y="35" font-family="Inter" font-size="9"
+      fill="#9ca3af">⭐ 4.9 · Top Rated</text>
+    <circle cx="132" cy="14" r="7" fill="#10b981"/>
+  </g>
+
+  <!-- Floating Card 2 — Order Done -->
+  <g transform="translate(420, 80)" filter="url(#shadow)">
+    <rect width="160" height="54" rx="14" fill="white"/>
+    <rect x="10" y="10" width="34" height="34" rx="10" fill="#d1fae5"/>
+    <text x="27" y="32" text-anchor="middle" font-size="18">✅</text>
+    <text x="52" y="24" font-family="Inter" font-size="11"
+      font-weight="700" fill="#1f2937">Order Delivered!</text>
+    <text x="52" y="37" font-family="Inter" font-size="9"
+      fill="#9ca3af">React Website • $149</text>
+  </g>
+
+  <!-- Floating Card 3 — Earnings -->
+  <g transform="translate(440, 370)" filter="url(#shadow)">
+    <rect width="150" height="54" rx="14" fill="white"/>
+    <rect x="10" y="10" width="34" height="34" rx="10" fill="url(#grad2)"/>
+    <text x="27" y="32" text-anchor="middle" font-size="18">💰</text>
+    <text x="52" y="24" font-family="Inter" font-size="11"
+      font-weight="700" fill="#1f2937">$12,500+</text>
+    <text x="52" y="37" font-family="Inter" font-size="9"
+      fill="#9ca3af">Earned this month</text>
+  </g>
+
+  <!-- Floating Card 4 — Rating -->
+  <g transform="translate(20, 340)" filter="url(#shadow)">
+    <rect width="140" height="54" rx="14" fill="white"/>
+    <rect x="10" y="10" width="34" height="34" rx="10" fill="url(#grad3)"/>
+    <text x="27" y="32" text-anchor="middle" font-size="18">⭐</text>
+    <text x="52" y="24" font-family="Inter" font-size="11"
+      font-weight="700" fill="#1f2937">5.0 Rating</text>
+    <text x="52" y="37" font-family="Inter" font-size="9"
+      fill="#9ca3af">312 reviews</text>
+  </g>
+
+  <!-- Decorative dots pattern -->
+  <g fill="#e0e7ff" opacity="0.6">
+    <circle cx="560" cy="60" r="4"/>
+    <circle cx="580" cy="60" r="4"/>
+    <circle cx="560" cy="80" r="4"/>
+    <circle cx="580" cy="80" r="4"/>
+    <circle cx="560" cy="100" r="4"/>
+    <circle cx="580" cy="100" r="4"/>
+  </g>
+
+  <g fill="#e0e7ff" opacity="0.6">
+    <circle cx="20" cy="420" r="4"/>
+    <circle cx="40" cy="420" r="4"/>
+    <circle cx="20" cy="440" r="4"/>
+    <circle cx="40" cy="440" r="4"/>
+    <circle cx="20" cy="460" r="4"/>
+    <circle cx="40" cy="460" r="4"/>
+  </g>
+</svg>
