@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Service Detail — FreelanceHub</title>
+    <!-- YAHAN ADD KARO ↓ -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/service-detail.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar" id="navbar">
+      <div class="container">
+        <div class="nav-inner">
+          <a href="index.html" class="nav-logo">
+            <img
+              src="assets/images/logo.svg"
+              alt="FreelanceHub"
+              height="38"
+              style="display: block"
+            />
+          </a>
+          <div class="nav-search">
+            <i class="fa fa-search search-icon"></i>
+            <input
+              type="text"
+              placeholder="Search services..."
+              id="navSearch"
+            />
+          </div>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="browse.html">Browse</a></li>
+            <li><a href="#">How it Works</a></li>
+          </ul>
+          <div class="nav-actions">
+            <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+            <a href="register.html" class="btn btn-primary btn-sm">Sign Up</a>
+          </div>
+          <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ===== BREADCRUMB ===== -->
+    <div class="breadcrumb-bar">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <i class="fa fa-chevron-right"></i>
+          <a href="browse.html">Browse</a>
+          <i class="fa fa-chevron-right"></i>
+          <a href="browse.html?category=Web+Development" id="bcCategory"
+            >Web Development</a
+          >
+          <i class="fa fa-chevron-right"></i>
+          <span id="bcTitle">Service Detail</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== MAIN DETAIL LAYOUT ===== -->
+    <div class="detail-layout">
+      <div class="container">
+        <div class="detail-inner">
+          <!-- ===== LEFT COLUMN ===== -->
+          <div class="detail-left">
+            <!-- Service Title -->
+            <div class="service-title-block">
+              <div class="service-category-tag" id="serviceCategory">
+                <i class="fa fa-code"></i> Web Development
+              </div>
+              <h1 class="service-main-title" id="serviceTitle">Loading...</h1>
+              <!-- Freelancer Row -->
+              <div class="service-author-row">
+                <a href="freelancer-profile.html?id=1" class="author-info">
+                  <div class="author-avatar-wrap">
+                    <img src="" alt="" id="authorAvatar" />
+                    <div class="author-online" id="authorOnline"></div>
+                  </div>
+                  <div>
+                    <span class="author-name" id="authorName">Loading...</span>
+                    <span class="author-level" id="authorLevel">Level 2</span>
+                  </div>
+                </a>
+                <div class="service-quick-stats">
+                  <div class="quick-stat">
+                    <span class="qs-star">★</span>
+                    <strong id="serviceRating">0.0</strong>
+                    <span id="serviceReviews">(0)</span>
+                  </div>
+                  <div class="quick-stat-divider"></div>
+                  <div class="quick-stat">
+                    <i class="fa fa-shopping-bag"></i>
+                    <span id="serviceOrders">0 orders</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Image Gallery -->
+            <div class="gallery-section">
+              <div class="gallery-main">
+                <img src="" alt="Service Preview" id="mainImage" />
+                <div class="gallery-overlay">
+                  <button class="gallery-zoom-btn" onclick="openLightbox()">
+                    <i class="fa fa-expand"></i> View Full
+                  </button>
+                </div>
+              </div>
+              <div class="gallery-thumbs" id="galleryThumbs">
+                <!-- Thumbnails injected by JS -->
+              </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="detail-tabs">
+              <button
+                class="tab-btn active"
+                onclick="switchTab('description', this)"
+              >
+                Description
+              </button>
+              <button class="tab-btn" onclick="switchTab('about', this)">
+                About Seller
+              </button>
+              <button class="tab-btn" onclick="switchTab('reviews', this)">
+                Reviews <span class="tab-count" id="reviewTabCount">0</span>
+              </button>
+              <button class="tab-btn" onclick="switchTab('faq', this)">
+                FAQ
+              </button>
+            </div>
+
+            <!-- Tab: Description -->
+            <div class="tab-content active" id="tab-description">
+              <div class="description-body" id="serviceDescription">
+                <!-- Injected by JS -->
+              </div>
+
+              <!-- What You Get -->
+              <div class="what-you-get">
+                <h3><i class="fa fa-check-circle"></i> What You Will Get</h3>
+                <ul id="whatYouGet">
+                  <!-- Injected by JS -->
+                </ul>
+              </div>
+
+              <!-- Tags -->
+              <div class="service-tags" id="serviceTags">
+                <!-- Injected by JS -->
+              </div>
+            </div>
+
+            <!-- Tab: About Seller -->
+            <div class="tab-content" id="tab-about">
+              <div class="about-seller-card">
+                <div class="seller-profile-row">
+                  <a href="freelancer-profile.html?id=1">
+                    <img src="" alt="" id="aboutAvatar" class="about-avatar" />
+                  </a>
+                  <div class="seller-info">
+                    <h3 id="aboutName">Loading...</h3>
+                    <p id="aboutTitle" class="seller-pro-title">—</p>
+                    <div class="seller-rating-row">
+                      <span class="qs-star">★</span>
+                      <strong id="aboutRating">0.0</strong>
+                      <span id="aboutReviews">(0 reviews)</span>
+                    </div>
+                  </div>
+                  <a
+                    href="freelancer-profile.html?id=1"
+                    class="btn btn-outline btn-sm"
+                  >
+                    View Profile
+                  </a>
+                </div>
+
+                <p class="seller-bio" id="aboutBio">—</p>
+
+                <div class="seller-details-grid">
+                  <div class="seller-detail-item">
+                    <i class="fa fa-map-marker-alt"></i>
+                    <div>
+                      <span>Location</span>
+                      <strong id="aboutLocation">—</strong>
+                    </div>
+                  </div>
+                  <div class="seller-detail-item">
+                    <i class="fa fa-clock"></i>
+                    <div>
+                      <span>Member Since</span>
+                      <strong id="aboutMember">—</strong>
+                    </div>
+                  </div>
+                  <div class="seller-detail-item">
+                    <i class="fa fa-language"></i>
+                    <div>
+                      <span>Language</span>
+                      <strong id="aboutLanguage">—</strong>
+                    </div>
+                  </div>
+                  <div class="seller-detail-item">
+                    <i class="fa fa-reply"></i>
+                    <div>
+                      <span>Response Time</span>
+                      <strong id="aboutResponse">—</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab: Reviews -->
+            <div class="tab-content" id="tab-reviews">
+              <!-- Rating Summary -->
+              <div class="reviews-summary">
+                <div class="rating-big">
+                  <div class="rating-big-number" id="ratingBig">0.0</div>
+                  <div class="rating-big-stars" id="ratingBigStars"></div>
+                  <div class="rating-big-count" id="ratingBigCount">
+                    0 reviews
+                  </div>
+                </div>
+                <div class="rating-breakdown" id="ratingBreakdown">
+                  <!-- Injected by JS -->
+                </div>
+              </div>
+
+              <!-- Review Cards -->
+              <div class="reviews-list" id="reviewsList">
+                <!-- Injected by JS -->
+              </div>
+
+              <!-- Load More -->
+              <button
+                class="load-more-btn"
+                id="loadMoreBtn"
+                onclick="loadMoreReviews()"
+              >
+                Load More Reviews
+              </button>
+            </div>
+
+            <!-- Tab: FAQ -->
+            <div class="tab-content" id="tab-faq">
+              <div class="faq-list" id="faqList">
+                <!-- Injected by JS -->
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== RIGHT COLUMN — ORDER CARD ===== -->
+          <div class="detail-right">
+            <div class="order-card" id="orderCard">
+              <!-- Package Tabs -->
+              <div class="package-tabs">
+                <button
+                  class="pkg-tab active"
+                  onclick="selectPackage('basic', this)"
+                >
+                  Basic
+                </button>
+                <button
+                  class="pkg-tab"
+                  onclick="selectPackage('standard', this)"
+                >
+                  Standard
+                </button>
+                <button
+                  class="pkg-tab"
+                  onclick="selectPackage('premium', this)"
+                >
+                  Premium
+                </button>
+              </div>
+
+              <!-- Package Content -->
+              <div class="package-content" id="packageContent">
+                <!-- Injected by JS -->
+              </div>
+
+              <!-- Order Actions -->
+              <div class="order-actions">
+                <button
+                  class="btn btn-primary btn-lg order-btn"
+                  onclick="handleOrder()"
+                >
+                  Continue <i class="fa fa-arrow-right"></i>
+                </button>
+                <button
+                  class="btn btn-outline btn-lg contact-btn"
+                  onclick="handleContact()"
+                >
+                  <i class="fa fa-comment"></i> Contact Seller
+                </button>
+              </div>
+
+              <!-- Trust Badges -->
+              <div class="trust-badges">
+                <div class="trust-item">
+                  <i class="fa fa-shield-halved"></i>
+                  <span>Secure Payment</span>
+                </div>
+                <div class="trust-item">
+                  <i class="fa fa-rotate-left"></i>
+                  <span>Money-back Guarantee</span>
+                </div>
+                <div class="trust-item">
+                  <i class="fa fa-headset"></i>
+                  <span>24/7 Support</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Seller Quick Card -->
+            <div class="seller-quick-card">
+              <div class="sqc-header">
+                <img src="" alt="" id="sqcAvatar" />
+                <div>
+                  <strong id="sqcName">—</strong>
+                  <p id="sqcTitle">—</p>
+                </div>
+                <div class="sqc-online" id="sqcOnline"></div>
+              </div>
+              <div class="sqc-stats">
+                <div class="sqc-stat">
+                  <strong id="sqcRating">—</strong>
+                  <span>Rating</span>
+                </div>
+                <div class="sqc-stat">
+                  <strong id="sqcOrders">—</strong>
+                  <span>Orders</span>
+                </div>
+                <div class="sqc-stat">
+                  <strong id="sqcResponse">—</strong>
+                  <span>Response</span>
+                </div>
+              </div>
+              <a
+                href="freelancer-profile.html?id=1"
+                class="btn btn-outline btn-sm"
+                style="width: 100%; justify-content: center; margin-top: 4px"
+              >
+                View Full Profile
+              </a>
+            </div>
+
+            <!-- Related Services -->
+            <div class="related-section">
+              <h4 class="related-title">Related Services</h4>
+              <div class="related-list" id="relatedServices">
+                <!-- Injected by JS -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== LIGHTBOX ===== -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+      <div class="lightbox-inner" onclick="event.stopPropagation()">
+        <button class="lightbox-close" onclick="closeLightbox()">
+          <i class="fa fa-times"></i>
+        </button>
+        <img src="" alt="" id="lightboxImg" />
+      </div>
+    </div>
+
+    <!-- ===== ORDER MODAL ===== -->
+    <div class="modal-overlay" id="orderModal">
+      <div class="modal-box">
+        <div class="modal-header">
+          <h3><i class="fa fa-shopping-cart"></i> Place Your Order</h3>
+          <button class="modal-close" onclick="closeModal('orderModal')">
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-package-info" id="modalPackageInfo">
+            <!-- Injected by JS -->
+          </div>
+          <div class="modal-form">
+            <label>Tell the seller your requirements</label>
+            <textarea
+              id="orderRequirements"
+              placeholder="Describe your project, goals, and any specific requirements..."
+              rows="5"
+            ></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-outline" onclick="closeModal('orderModal')">
+            Cancel
+          </button>
+          <button class="btn btn-primary" onclick="confirmOrder()">
+            <i class="fa fa-lock"></i> Confirm & Pay
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== CONTACT MODAL ===== -->
+    <div class="modal-overlay" id="contactModal">
+      <div class="modal-box">
+        <div class="modal-header">
+          <h3><i class="fa fa-comment"></i> Contact Seller</h3>
+          <button class="modal-close" onclick="closeModal('contactModal')">
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="contact-seller-info" id="contactSellerInfo">
+            <!-- Injected by JS -->
+          </div>
+          <div class="modal-form">
+            <label>Your Message</label>
+            <textarea
+              id="contactMessage"
+              placeholder="Hi, I'm interested in your service. I need..."
+              rows="5"
+            ></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-outline" onclick="closeModal('contactModal')">
+            Cancel
+          </button>
+          <button class="btn btn-primary" onclick="sendMessage()">
+            <i class="fa fa-paper-plane"></i> Send Message
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="logo">⚡ FreelanceHub</div>
+            <p>
+              The smartest way to connect businesses with top freelance talent
+              across the globe.
+            </p>
+            <div class="footer-socials">
+              <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-btn"><i class="fab fa-linkedin"></i></a>
+              <a href="#" class="social-btn"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-btn"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>For Clients</h4>
+            <ul>
+              <li><a href="browse.html">Find Services</a></li>
+              <li><a href="#">How to Hire</a></li>
+              <li><a href="#">Support</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>For Freelancers</h4>
+            <ul>
+              <li><a href="register.html">Join Now</a></li>
+              <li><a href="#">Create Service</a></li>
+              <li><a href="#">Community</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 FreelanceHub. All rights reserved.</p>
+          <div style="display: flex; gap: 20px">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/service-detail.js"></script>
+  </body>
+</html>
