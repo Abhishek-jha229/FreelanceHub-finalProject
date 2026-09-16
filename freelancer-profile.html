@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Freelancer Profile — FreelanceHub</title>
+    <!-- YAHAN ADD KARO ↓ -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/profile.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar" id="navbar">
+      <div class="container">
+        <div class="nav-inner">
+          <a href="index.html" class="nav-logo">
+            <img
+              src="assets/images/logo.svg"
+              alt="FreelanceHub"
+              height="38"
+              style="display: block"
+            />
+          </a>
+          <div class="nav-search">
+            <i class="fa fa-search search-icon"></i>
+            <input
+              type="text"
+              placeholder="Search services..."
+              id="navSearch"
+            />
+          </div>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="browse.html">Browse</a></li>
+            <li><a href="#">How it Works</a></li>
+          </ul>
+          <div class="nav-actions">
+            <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+            <a href="register.html" class="btn btn-primary btn-sm">Sign Up</a>
+          </div>
+          <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ===== PROFILE HERO BANNER ===== -->
+    <div class="profile-banner">
+      <div class="banner-bg" id="bannerBg"></div>
+      <div class="container">
+        <div class="profile-hero">
+          <!-- Avatar -->
+          <div class="profile-avatar-wrap">
+            <img src="" alt="" id="profileAvatar" class="profile-avatar" />
+            <div class="profile-online-badge" id="onlineBadge">
+              <span class="online-dot"></span> Online
+            </div>
+          </div>
+
+          <!-- Profile Info -->
+          <div class="profile-hero-info">
+            <div class="profile-name-row">
+              <h1 id="profileName">Loading...</h1>
+              <div class="profile-badges" id="profileBadges"></div>
+            </div>
+            <p class="profile-pro-title" id="profileTitle">—</p>
+
+            <div class="profile-meta-row">
+              <div class="profile-meta-item">
+                <i class="fa fa-star"></i>
+                <strong id="profileRating">0.0</strong>
+                <span id="profileReviewCount">(0 reviews)</span>
+              </div>
+              <div class="profile-meta-item">
+                <i class="fa fa-map-marker-alt"></i>
+                <span id="profileLocation">—</span>
+              </div>
+              <div class="profile-meta-item">
+                <i class="fa fa-calendar"></i>
+                <span>Member since <span id="profileMember">—</span></span>
+              </div>
+              <div class="profile-meta-item">
+                <i class="fa fa-clock"></i>
+                <span>Responds in <span id="profileResponse">—</span></span>
+              </div>
+            </div>
+
+            <div class="profile-skills-row" id="profileSkills"></div>
+          </div>
+
+          <!-- CTA -->
+          <div class="profile-hero-cta">
+            <button class="btn btn-primary btn-lg" onclick="openContactModal()">
+              <i class="fa fa-comment"></i> Contact Me
+            </button>
+            <button class="btn btn-outline btn-lg" onclick="toggleFollow(this)">
+              <i class="fa fa-heart"></i> Follow
+            </button>
+            <div class="profile-rate-badge">
+              <span>From</span>
+              <strong id="profileRate">$49</strong>
+              <span>/ service</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== PROFILE STATS BAR ===== -->
+    <div class="profile-stats-bar">
+      <div class="container">
+        <div class="profile-stats-grid">
+          <div class="pstat-item">
+            <strong id="statOrders">0</strong>
+            <span>Completed Orders</span>
+          </div>
+          <div class="pstat-divider"></div>
+          <div class="pstat-item">
+            <strong id="statRating">0.0</strong>
+            <span>Average Rating</span>
+          </div>
+          <div class="pstat-divider"></div>
+          <div class="pstat-item">
+            <strong id="statOnTime">0%</strong>
+            <span>On-time Delivery</span>
+          </div>
+          <div class="pstat-divider"></div>
+          <div class="pstat-item">
+            <strong id="statReorder">0%</strong>
+            <span>Order Completion</span>
+          </div>
+          <div class="pstat-divider"></div>
+          <div class="pstat-item">
+            <strong id="statResponse">—</strong>
+            <span>Avg Response Time</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== MAIN PROFILE LAYOUT ===== -->
+    <div class="profile-layout">
+      <div class="container">
+        <div class="profile-inner">
+          <!-- ===== LEFT SIDEBAR ===== -->
+          <aside class="profile-sidebar">
+            <!-- Languages -->
+            <div class="sidebar-card">
+              <h4 class="sidebar-card-title">
+                <i class="fa fa-language"></i> Languages
+              </h4>
+              <div id="languagesList"></div>
+            </div>
+
+            <!-- Skills -->
+            <div class="sidebar-card">
+              <h4 class="sidebar-card-title">
+                <i class="fa fa-code"></i> Skills
+              </h4>
+              <div class="skills-list" id="skillsList"></div>
+            </div>
+
+            <!-- Education -->
+            <div class="sidebar-card">
+              <h4 class="sidebar-card-title">
+                <i class="fa fa-graduation-cap"></i> Education
+              </h4>
+              <div id="educationList"></div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="sidebar-card">
+              <h4 class="sidebar-card-title">
+                <i class="fa fa-certificate"></i> Certifications
+              </h4>
+              <div id="certsList"></div>
+            </div>
+
+            <!-- Share Profile -->
+            <div class="sidebar-card share-card">
+              <h4 class="sidebar-card-title">
+                <i class="fa fa-share-nodes"></i> Share Profile
+              </h4>
+              <div class="share-btns">
+                <button
+                  class="share-btn linkedin"
+                  onclick="shareProfile('linkedin')"
+                >
+                  <i class="fab fa-linkedin"></i>
+                </button>
+                <button
+                  class="share-btn twitter"
+                  onclick="shareProfile('twitter')"
+                >
+                  <i class="fab fa-twitter"></i>
+                </button>
+                <button class="share-btn copy" onclick="copyProfileLink()">
+                  <i class="fa fa-link"></i>
+                </button>
+              </div>
+            </div>
+          </aside>
+
+          <!-- ===== MAIN CONTENT ===== -->
+          <main class="profile-main">
+            <!-- Profile Tabs -->
+            <div class="profile-tabs">
+              <button
+                class="ptab-btn active"
+                onclick="switchProfileTab('overview', this)"
+              >
+                Overview
+              </button>
+              <button
+                class="ptab-btn"
+                onclick="switchProfileTab('services', this)"
+              >
+                Services <span class="ptab-count" id="servicesTabCount">0</span>
+              </button>
+              <button
+                class="ptab-btn"
+                onclick="switchProfileTab('portfolio', this)"
+              >
+                Portfolio
+                <span class="ptab-count" id="portfolioTabCount">0</span>
+              </button>
+              <button
+                class="ptab-btn"
+                onclick="switchProfileTab('reviews', this)"
+              >
+                Reviews <span class="ptab-count" id="reviewsTabCount">0</span>
+              </button>
+            </div>
+
+            <!-- ===== TAB: OVERVIEW ===== -->
+            <div class="ptab-content active" id="ptab-overview">
+              <!-- About Me -->
+              <div class="profile-section">
+                <h3 class="section-heading">
+                  <i class="fa fa-user"></i> About Me
+                </h3>
+                <div class="about-text" id="aboutText"></div>
+              </div>
+
+              <!-- Work Experience -->
+              <div class="profile-section">
+                <h3 class="section-heading">
+                  <i class="fa fa-briefcase"></i> Work Experience
+                </h3>
+                <div class="experience-list" id="experienceList"></div>
+              </div>
+
+              <!-- Featured Service -->
+              <div class="profile-section">
+                <h3 class="section-heading">
+                  <i class="fa fa-star"></i> Featured Service
+                </h3>
+                <div id="featuredServiceCard"></div>
+              </div>
+            </div>
+
+            <!-- ===== TAB: SERVICES ===== -->
+            <div class="ptab-content" id="ptab-services">
+              <div class="profile-services-grid" id="profileServicesGrid"></div>
+            </div>
+
+            <!-- ===== TAB: PORTFOLIO ===== -->
+            <div class="ptab-content" id="ptab-portfolio">
+              <div class="portfolio-grid" id="portfolioGrid"></div>
+            </div>
+
+            <!-- ===== TAB: REVIEWS ===== -->
+            <div class="ptab-content" id="ptab-reviews">
+              <!-- Rating Summary -->
+              <div class="profile-reviews-summary">
+                <div class="prs-left">
+                  <div class="prs-big-number" id="prsRating">0.0</div>
+                  <div class="prs-stars" id="prsStars"></div>
+                  <div class="prs-label" id="prsCount">0 reviews</div>
+                </div>
+                <div class="prs-bars" id="prsBars"></div>
+                <div class="prs-categories" id="prsCategories"></div>
+              </div>
+
+              <!-- Review Cards -->
+              <div class="profile-reviews-list" id="profileReviewsList"></div>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== PORTFOLIO LIGHTBOX ===== -->
+    <div class="portfolio-lightbox" id="portfolioLightbox">
+      <div class="plb-overlay" onclick="closePortfolioLightbox()"></div>
+      <div class="plb-box">
+        <button class="plb-close" onclick="closePortfolioLightbox()">
+          <i class="fa fa-times"></i>
+        </button>
+        <div class="plb-img-wrap">
+          <img src="" alt="" id="plbImage" />
+        </div>
+        <div class="plb-info">
+          <h3 id="plbTitle">—</h3>
+          <p id="plbDesc">—</p>
+          <div class="plb-tags" id="plbTags"></div>
+          <a
+            href="#"
+            id="plbLink"
+            class="btn btn-primary btn-sm"
+            target="_blank"
+          >
+            <i class="fa fa-external-link"></i> View Project
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== CONTACT MODAL ===== -->
+    <div class="modal-overlay" id="contactModal">
+      <div class="modal-box">
+        <div class="modal-header">
+          <h3><i class="fa fa-comment"></i> Send a Message</h3>
+          <button class="modal-close" onclick="closeContactModal()">
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="contact-modal-seller" id="contactModalSeller"></div>
+          <div class="modal-form">
+            <div class="form-group">
+              <label>Subject</label>
+              <input
+                type="text"
+                id="msgSubject"
+                placeholder="e.g. I need a React website"
+              />
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea
+                id="msgBody"
+                rows="5"
+                placeholder="Hi, I'm interested in your services. I need..."
+              ></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-outline" onclick="closeContactModal()">
+            Cancel
+          </button>
+          <button class="btn btn-primary" onclick="sendContactMessage()">
+            <i class="fa fa-paper-plane"></i> Send Message
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="logo">⚡ FreelanceHub</div>
+            <p>
+              The smartest way to connect businesses with top freelance talent
+              across the globe.
+            </p>
+            <div class="footer-socials">
+              <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-btn"><i class="fab fa-linkedin"></i></a>
+              <a href="#" class="social-btn"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-btn"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>For Clients</h4>
+            <ul>
+              <li><a href="browse.html">Find Services</a></li>
+              <li><a href="#">How to Hire</a></li>
+              <li><a href="#">Support</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>For Freelancers</h4>
+            <ul>
+              <li><a href="register.html">Join Now</a></li>
+              <li><a href="#">Create Service</a></li>
+              <li><a href="#">Community</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 FreelanceHub. All rights reserved.</p>
+          <div style="display: flex; gap: 20px">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/profile.js"></script>
+  </body>
+</html>
