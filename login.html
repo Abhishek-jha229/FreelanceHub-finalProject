@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login — FreelanceHub</title>
+    <!-- YAHAN ADD KARO ↓ -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/auth.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body class="auth-body">
+    <!-- ===== NAVBAR MINIMAL ===== -->
+    <nav class="auth-navbar">
+      <div class="container">
+        <div class="auth-nav-inner">
+          <a href="index.html" class="nav-logo">
+            <img
+              src="assets/images/logo.svg"
+              alt="FreelanceHub"
+              height="38"
+              style="display: block"
+            />
+          </a>
+          <div class="auth-nav-links">
+            <span>Don't have an account?</span>
+            <a href="register.html" class="btn btn-primary btn-sm">
+              Sign Up Free
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ===== AUTH LAYOUT ===== -->
+    <div class="auth-layout">
+      <!-- ===== LEFT PANEL ===== -->
+      <div class="auth-left">
+        <div class="auth-left-inner">
+          <div class="auth-left-content">
+            <div class="auth-brand-logo">
+              <div class="logo-icon-lg">⚡</div>
+              <span>FreelanceHub</span>
+            </div>
+
+            <h2 class="auth-left-title">
+              The World's Best <br />
+              <span class="gradient-text-auth">Freelance Marketplace</span>
+            </h2>
+
+            <p class="auth-left-subtitle">
+              Connect with top freelancers, get quality work done, and grow your
+              business — all in one place.
+            </p>
+
+            <!-- Features List -->
+            <ul class="auth-features">
+              <li>
+                <div class="af-icon">
+                  <i class="fa fa-shield-halved"></i>
+                </div>
+                <div>
+                  <strong>Secure Payments</strong>
+                  <span>Your money is protected until work is done</span>
+                </div>
+              </li>
+              <li>
+                <div class="af-icon">
+                  <i class="fa fa-star"></i>
+                </div>
+                <div>
+                  <strong>Top Quality Talent</strong>
+                  <span>5,000+ verified freelancers ready to help</span>
+                </div>
+              </li>
+              <li>
+                <div class="af-icon">
+                  <i class="fa fa-bolt"></i>
+                </div>
+                <div>
+                  <strong>Fast Delivery</strong>
+                  <span>Get your projects done quickly and on time</span>
+                </div>
+              </li>
+              <li>
+                <div class="af-icon">
+                  <i class="fa fa-headset"></i>
+                </div>
+                <div>
+                  <strong>24/7 Support</strong>
+                  <span>We're always here to help you succeed</span>
+                </div>
+              </li>
+            </ul>
+
+            <!-- Testimonial -->
+            <div class="auth-testimonial">
+              <img
+                src="https://i.pravatar.cc/48?img=32"
+                alt="User"
+                class="test-avatar"
+              />
+              <div class="test-content">
+                <p>
+                  "FreelanceHub helped me find the perfect developer in under 24
+                  hours. Absolutely game-changing!"
+                </p>
+                <strong>David Miller</strong>
+                <span>CEO, TechStartup Inc.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Cards -->
+          <div class="auth-floating-cards">
+            <div class="afc-card afc-1">
+              <img src="https://i.pravatar.cc/36?img=3" alt="" />
+              <div>
+                <strong>Alex J.</strong>
+                <span>⭐ 4.9 · Top Rated</span>
+              </div>
+            </div>
+            <div class="afc-card afc-2">
+              <div class="afc-icon">✅</div>
+              <div>
+                <strong>Order Delivered!</strong>
+                <span>React Website</span>
+              </div>
+            </div>
+            <div class="afc-card afc-3">
+              <div class="afc-icon">🎉</div>
+              <div>
+                <strong>50,000+ Clients</strong>
+                <span>Trust FreelanceHub</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== RIGHT PANEL — LOGIN FORM ===== -->
+      <div class="auth-right">
+        <div class="auth-form-wrap">
+          <!-- Form Header -->
+          <div class="auth-form-header">
+            <h1>Welcome Back! 👋</h1>
+            <p>Sign in to your FreelanceHub account</p>
+          </div>
+
+          <!-- Social Login -->
+          <div class="social-login">
+            <button
+              class="social-login-btn google"
+              onclick="socialLogin('Google')"
+            >
+              <img
+                src="https://www.svgrepo.com/show/475656/google-color.svg"
+                alt="Google"
+                width="20"
+              />
+              Continue with Google
+            </button>
+            <button
+              class="social-login-btn github"
+              onclick="socialLogin('GitHub')"
+            >
+              <i class="fab fa-github"></i>
+              Continue with GitHub
+            </button>
+          </div>
+
+          <!-- Divider -->
+          <div class="auth-divider">
+            <span>or sign in with email</span>
+          </div>
+
+          <!-- Login Form -->
+          <form
+            class="auth-form"
+            id="loginForm"
+            onsubmit="handleLogin(event)"
+            novalidate
+          >
+            <!-- Email -->
+            <div class="form-field" id="emailField">
+              <label for="loginEmail">Email Address</label>
+              <div class="input-wrap">
+                <i class="fa fa-envelope input-icon"></i>
+                <input
+                  type="email"
+                  id="loginEmail"
+                  placeholder="Enter your email"
+                  autocomplete="email"
+                />
+                <span class="input-status"></span>
+              </div>
+              <span class="field-error" id="emailError"></span>
+            </div>
+
+            <!-- Password -->
+            <div class="form-field" id="passwordField">
+              <div class="field-label-row">
+                <label for="loginPassword">Password</label>
+                <a href="#" class="forgot-link" onclick="showForgotPassword()">
+                  Forgot Password?
+                </a>
+              </div>
+              <div class="input-wrap">
+                <i class="fa fa-lock input-icon"></i>
+                <input
+                  type="password"
+                  id="loginPassword"
+                  placeholder="Enter your password"
+                  autocomplete="current-password"
+                />
+                <button
+                  type="button"
+                  class="toggle-password"
+                  onclick="togglePassword('loginPassword', this)"
+                >
+                  <i class="fa fa-eye"></i>
+                </button>
+              </div>
+              <span class="field-error" id="passwordError"></span>
+            </div>
+
+            <!-- Remember Me -->
+            <div class="form-options">
+              <label class="checkbox-wrap">
+                <input type="checkbox" id="rememberMe" />
+                <span class="checkbox-custom"></span>
+                Remember me for 30 days
+              </label>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="auth-submit-btn" id="loginBtn">
+              <span class="btn-text">
+                Sign In <i class="fa fa-arrow-right"></i>
+              </span>
+              <span class="btn-loader" style="display: none">
+                <i class="fa fa-spinner fa-spin"></i> Signing in...
+              </span>
+            </button>
+          </form>
+
+          <!-- Footer -->
+          <div class="auth-form-footer">
+            <p>
+              Don't have an account?
+              <a href="register.html">Create one free</a>
+            </p>
+          </div>
+
+          <!-- Trust Indicators -->
+          <div class="auth-trust">
+            <div class="trust-row">
+              <span><i class="fa fa-lock"></i> SSL Secured</span>
+              <span><i class="fa fa-shield-halved"></i> Privacy Protected</span>
+              <span><i class="fa fa-users"></i> 50k+ Members</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== FORGOT PASSWORD MODAL ===== -->
+    <div class="modal-overlay" id="forgotModal">
+      <div class="modal-box forgot-modal-box">
+        <div class="modal-header">
+          <h3><i class="fa fa-key"></i> Reset Password</h3>
+          <button class="modal-close" onclick="closeForgotModal()">
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="forgot-icon">📧</div>
+          <p class="forgot-desc">
+            Enter your email address and we'll send you a link to reset your
+            password.
+          </p>
+          <div class="form-field">
+            <label>Email Address</label>
+            <div class="input-wrap">
+              <i class="fa fa-envelope input-icon"></i>
+              <input
+                type="email"
+                id="forgotEmail"
+                placeholder="Enter your registered email"
+              />
+            </div>
+            <span class="field-error" id="forgotEmailError"></span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-outline" onclick="closeForgotModal()">
+            Cancel
+          </button>
+          <button class="btn btn-primary" onclick="sendResetLink()">
+            <i class="fa fa-paper-plane"></i> Send Reset Link
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+  </body>
+</html>
