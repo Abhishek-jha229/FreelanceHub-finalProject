@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Browse Services — FreelanceHub</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/browse.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar" id="navbar">
+      <div class="container">
+        <div class="nav-inner">
+          <!-- AUR YE LIKHO: -->
+          <a href="index.html" class="nav-logo">
+            <img
+              src="assets/images/logo.svg"
+              alt="FreelanceHub"
+              height="38"
+              style="display: block"
+            />
+          </a>
+
+          <div class="nav-search">
+            <i class="fa fa-search search-icon"></i>
+            <input
+              type="text"
+              placeholder="Search services..."
+              id="navSearch"
+            />
+          </div>
+
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="browse.html" class="active">Browse</a></li>
+            <li><a href="#">How it Works</a></li>
+          </ul>
+
+          <div class="nav-actions">
+            <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+            <a href="register.html" class="btn btn-primary btn-sm">Sign Up</a>
+          </div>
+
+          <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ===== BROWSE HEADER ===== -->
+    <section class="browse-header">
+      <div class="container">
+        <div class="browse-header-inner">
+          <div class="browse-header-text">
+            <div class="breadcrumb">
+              <a href="index.html">Home</a>
+              <i class="fa fa-chevron-right"></i>
+              <span id="breadcrumbCategory">Browse</span>
+            </div>
+            <h1 id="browseTitle">All Services</h1>
+            <p id="browseSubtitle">
+              Find the perfect freelance service for your business
+            </p>
+          </div>
+
+          <!-- Search Bar -->
+          <div class="browse-search">
+            <div class="browse-search-wrap">
+              <i class="fa fa-search"></i>
+              <input
+                type="text"
+                id="browseSearchInput"
+                placeholder="Search services..."
+              />
+              <button onclick="applySearch()" class="browse-search-btn">
+                Search
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MAIN BROWSE LAYOUT ===== -->
+    <div class="browse-layout">
+      <div class="container">
+        <div class="browse-inner">
+          <!-- ===== SIDEBAR FILTERS ===== -->
+          <aside class="filter-sidebar" id="filterSidebar">
+            <div class="filter-header">
+              <h3><i class="fa fa-sliders"></i> Filters</h3>
+              <button class="reset-btn" onclick="resetFilters()">
+                <i class="fa fa-rotate-left"></i> Reset
+              </button>
+            </div>
+
+            <!-- Category Filter -->
+            <div class="filter-section">
+              <div class="filter-section-header" onclick="toggleFilter(this)">
+                <h4>Category</h4>
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <div class="filter-section-body">
+                <ul class="filter-list" id="categoryFilter">
+                  <li>
+                    <label class="filter-radio">
+                      <input type="radio" name="category" value="" checked />
+                      <span class="radio-custom"></span>
+                      All Categories
+                      <span class="filter-count">5,200+</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="filter-radio">
+                      <input
+                        type="radio"
+                        name="category"
+                        value="Web Development"
+                      />
+                      <span class="radio-custom"></span>
+                      Web Development
+                      <span class="filter-count">1,240</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="filter-radio">
+                      <input
+                        type="radio"
+                        name="category"
+                        value="UI/UX Design"
+                      />
+                      <span class="radio-custom"></span>
+                      UI/UX Design
+                      <span class="filter-count">890</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="filter-radio">
+                      <input
+                        type="radio"
+                        name="category"
+                        value="Mobile Development"
+                      />
+                      <span class="radio-custom"></span>
+                      Mobile Apps
+                      <span class="filter-count">620</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="filter-radio">
+                      <input
+                        type="radio"
+                        name="category"
+                        value="Digital Marketing"
+                      />
+                      <span class="radio-custom"></span>
+                      Digital Marketing
+                      <span class="filter-count">940</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="filter-radio">
+                      <input
+                        type="radio"
+                        name="category"
+                        value="Content Writing"
+                      />
+                      <span class="radio-custom"></span>
+                      Content Writing
+                      <span class="filter-count">720</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="filter-radio">
+                      <input
+                        type="radio"
+                        name="category"
+                        value="Video Animation"
+                      />
+                      <span class="radio-custom"></span>
+                      Video & Animation
+                      <span class="filter-count">410</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="filter-radio">
+                      <input
+                        type="radio"
+                        name="category"
+                        value="Data Science"
+                      />
+                      <span class="radio-custom"></span>
+                      Data Science
+                      <span class="filter-count">310</span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Budget Filter -->
+            <div class="filter-section">
+              <div class="filter-section-header" onclick="toggleFilter(this)">
+                <h4>Budget</h4>
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <div class="filter-section-body">
+                <ul class="filter-list" id="budgetFilter">
+                  <li>
+                    <label class="filter-radio">
+                      <input type="radio" name="budget" value="" checked />
+                      <span class="radio-custom"></span>
+                      Any Budget
+                    </label>
+                  </li>
+                  <li>
+                    <label class="filter-radio">
+                      <input type="radio" name="budget" value="0-25" />
+                      <span class="radio-custom"></span>
+                      Under $25
+                    </label>
+                  </li>
+                  <li>
+                    <label class="filter-radio">
+                      <input type="radio" name="budget" value="25-50" />
+                      <span class="radio-custom"></span>
+                      $25 — $50
+                    </label>
+                  </li>
+                  <li>
+                    <label class="filter-radio">
+                      <input type="radio" name="budget" value="50-100" />
+                      <span class="radio-custom"></span>
+                      $50 — $100
+                    </label>
+                  </li>
+                  <li>
+                    <label class="filter-radio">
+                      <input type="radio" name="budget" value="100-200" />
+                      <span class="radio-custom"></span>
+                      $100 — $200
+                    </label>
+                  </li>
+                  <li>
+                    <label class="filter-radio">
+                      <input type="radio" name="budget" value="200+" />
+                      <span class="radio-custom"></span>
+                      $200 & Above
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Delivery Time -->
+            <div class="filter-section">
+              <div class="filter-section-header" onclick="toggleFilter(this)">
+                <h4>Delivery Time</h4>
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <div class="filter-section-body">
+                <ul class="filter-list" id="deliveryFilter">
+                  <li>
+                    <label class="filter-radio">
+                      <input type="radio" name="delivery" value="" checked />
+                      <span class="radio-custom"></span>
+                      Any Time
+                    </label>
+                  </li>
+                  <li>
+                    <label class="filter-radio">
+                      <input type="radio" name="delivery" value="1" />
+                      <span class="radio-custom"></span>
+                      <span class="express-tag">⚡ Express</span> 24 Hours
+                    </label>
+                  </li>
+                  <li>
+                    <label class="filter-radio">
+                      <input type="radio" name="delivery" value="3" />
+                      <span class="radio-custom"></span>
+                      Up to 3 Days
+                    </label>
+                  </li>
+                  <li>
+                    <label class="filter-radio">
+                      <input type="radio" name="delivery" value="7" />
+                      <span class="radio-custom"></span>
+                      Up to 7 Days
+                    </label>
+                  </li>
+                  <li>
+                    <label class="filter-radio">
+                      <input type="radio" name="delivery" value="14" />
+                      <span class="radio-custom"></span>
+                      Up to 14 Days
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Rating Filter -->
+            <div class="filter-section">
+              <div class="filter-section-header" onclick="toggleFilter(this)">
+                <h4>Seller Rating</h4>
+                <i class="fa fa-chevron-down"></i>
+              </div>
+              <div class="filter-section-body">
+                <ul class="filter-list" id="ratingFilter">
+                  <li>
+                    <label class="filter-radio">
+                      <input type="radio" name="rating" value="" checked />
+                      <span class="radio-custom"></span>
+                      Any Rating
+                    </label>
+                  </li>
+                  <li>
+                    <label class="filter-radio">
+                      <input type="radio" name="rating" value="4.5" />
+                      <span class="radio-custom"></span>
+                      <span class="star-filter">★★★★★</span> 4.5 & up
+                    </label>
+                  </li>
+                  <li>
+                    <label class="filter-radio">
+                      <input type="radio" name="rating" value="4" />
+                      <span class="radio-custom"></span>
+                      <span class="star-filter">★★★★☆</span> 4.0 & up
+                    </label>
+                  </li>
+                  <li>
+                    <label class="filter-radio">
+                      <input type="radio" name="rating" value="3" />
+                      <span class="radio-custom"></span>
+                      <span class="star-filter">★★★☆☆</span> 3.0 & up
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Apply Button (Mobile) -->
+            <button class="apply-filters-btn" onclick="applyFilters()">
+              Apply Filters
+            </button>
+          </aside>
+
+          <!-- ===== MAIN CONTENT ===== -->
+          <main class="browse-main">
+            <!-- Toolbar -->
+            <div class="browse-toolbar">
+              <div class="toolbar-left">
+                <span class="results-count" id="resultsCount">
+                  Showing <strong>24</strong> results
+                </span>
+                <!-- Active Filters Tags -->
+                <div class="active-filters" id="activeFilters"></div>
+              </div>
+
+              <div class="toolbar-right">
+                <!-- Sort Dropdown -->
+                <div class="sort-wrap">
+                  <label>Sort by:</label>
+                  <select id="sortSelect" onchange="applyFilters()">
+                    <option value="relevant">Most Relevant</option>
+                    <option value="popular">Most Popular</option>
+                    <option value="rating">Best Rating</option>
+                    <option value="price_low">Price: Low to High</option>
+                    <option value="price_high">Price: High to Low</option>
+                    <option value="newest">Newest First</option>
+                  </select>
+                </div>
+
+                <!-- View Toggle -->
+                <div class="view-toggle">
+                  <button
+                    class="view-btn active"
+                    id="gridViewBtn"
+                    onclick="setView('grid')"
+                    title="Grid View"
+                  >
+                    <i class="fa fa-grip"></i>
+                  </button>
+                  <button
+                    class="view-btn"
+                    id="listViewBtn"
+                    onclick="setView('list')"
+                    title="List View"
+                  >
+                    <i class="fa fa-list"></i>
+                  </button>
+                </div>
+
+                <!-- Mobile Filter Toggle -->
+                <button class="mobile-filter-btn" onclick="toggleSidebar()">
+                  <i class="fa fa-sliders"></i> Filters
+                </button>
+              </div>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="services-grid" id="servicesGrid">
+              <!-- Injected by JS -->
+            </div>
+
+            <!-- Empty State -->
+            <div class="empty-state" id="emptyState" style="display: none">
+              <div class="empty-icon">🔍</div>
+              <h3>No services found</h3>
+              <p>
+                Try adjusting your filters or search with different keywords.
+              </p>
+              <button class="btn btn-primary" onclick="resetFilters()">
+                Clear Filters
+              </button>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination" id="pagination">
+              <button
+                class="page-btn prev-btn"
+                id="prevBtn"
+                onclick="changePage(-1)"
+              >
+                <i class="fa fa-chevron-left"></i> Prev
+              </button>
+              <div class="page-numbers" id="pageNumbers"></div>
+              <button
+                class="page-btn next-btn"
+                id="nextBtn"
+                onclick="changePage(1)"
+              >
+                Next <i class="fa fa-chevron-right"></i>
+              </button>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Sidebar Overlay -->
+    <div
+      class="sidebar-overlay"
+      id="sidebarOverlay"
+      onclick="toggleSidebar()"
+    ></div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="logo">⚡ FreelanceHub</div>
+            <p>
+              The smartest way to connect businesses with top freelance talent
+              across the globe.
+            </p>
+            <div class="footer-socials">
+              <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-btn"><i class="fab fa-linkedin"></i></a>
+              <a href="#" class="social-btn"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-btn"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Press</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>For Clients</h4>
+            <ul>
+              <li><a href="browse.html">Find Services</a></li>
+              <li><a href="#">How to Hire</a></li>
+              <li><a href="#">Payment Methods</a></li>
+              <li><a href="#">Support</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>For Freelancers</h4>
+            <ul>
+              <li><a href="register.html">Join Now</a></li>
+              <li><a href="#">Create Service</a></li>
+              <li><a href="#">Seller Help</a></li>
+              <li><a href="#">Community</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 FreelanceHub. All rights reserved.</p>
+          <div style="display: flex; gap: 20px">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/browse.js"></script>
+  </body>
+</html>
